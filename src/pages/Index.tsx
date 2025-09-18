@@ -1,7 +1,7 @@
 import Hero from "../components/pages/home/Hero";
 import CTA from "../components/pages/home/CTA";
 
-const Home = () => {
+const Index = () => {
   return (
     <>
       <Hero />
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Index;

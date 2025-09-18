@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Festival from "./pages/Festival";
 import Gallery from "./pages/Gallery";
@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Index />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/Festival" element={<Festival />} />
         <Route path="/Gallery" element={<Gallery />} />
