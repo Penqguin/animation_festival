@@ -6,7 +6,7 @@ const Hero = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Images array - replace with your actual image paths
+  // Images array - replace with actual image paths once I've got images
   const images = [
     "/path/to/image1.jpg",
     "/path/to/image2.jpg",
@@ -59,7 +59,7 @@ const Hero = () => {
             onClick={() => scrollTo(index)}
             className={`w-10 h-3 transition-all ${
               index === selectedIndex
-                ? "bg-white scale-125"
+                ? "bg-black scale-125"
                 : "bg-gray-400 hover:bg-gray-300"
             }`}
             aria-label={`Go to slide ${index + 1}`}

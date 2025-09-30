@@ -1,5 +1,11 @@
+import Navbar from "../components/layout/Navbar";
+
 const Gallery = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default Gallery;

@@ -5,18 +5,21 @@ import AboutUs from "./pages/AboutUs";
 import Festival from "./pages/Festival";
 import Gallery from "./pages/Gallery";
 import Organizations from "./pages/Organizations";
-import Navbar from "./components/layout/Navbar";
+import NotFound from "./pages/NotFound";
+// import { Cursor } from "./components/Cursor";
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Cursor /> */}
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/Festival" element={<Festival />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Organizations" element={<Organizations />} />
+        {/* add custom routes above this */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

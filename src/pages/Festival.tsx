@@ -1,5 +1,11 @@
+import Navbar from "../components/layout/Navbar";
+
 const Festival = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default Festival;

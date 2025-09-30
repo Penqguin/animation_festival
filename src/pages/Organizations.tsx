@@ -1,5 +1,11 @@
+import Navbar from "../components/layout/Navbar";
+
 const Organizations = () => {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default Organizations;
