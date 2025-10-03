@@ -8,9 +8,9 @@ const Hero = () => {
 
   // Images array - replace with actual image paths once I've got images
   const images = [
-    "/path/to/image1.jpg",
-    "/path/to/image2.jpg",
-    "/path/to/image3.jpg",
+    "/assets/react.svg",
+    "/assets/react.svg",
+    "/assets/react.svg",
   ];
 
   const onSelect = useCallback(() => {
@@ -44,7 +44,7 @@ const Hero = () => {
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-[500px] object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}

@@ -1,0 +1,15 @@
+/* Sticky footer utility for Animation Festival */
+.footer-sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 40;
+}
+
+@media (min-width: 768px) {
+  .footer-sticky {
+    position: static;
+    width: 100%;
+  }
+}
