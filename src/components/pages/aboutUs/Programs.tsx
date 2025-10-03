@@ -36,7 +36,7 @@ const initialPrograms: Program[] = [
 ];
 
 const Programs = () => {
-  const [programs, setPrograms] = useState<Program[]>(initialPrograms);
+  const [programs] = useState<Program[]>(initialPrograms);
 
   return (
     <section className="my-8">
