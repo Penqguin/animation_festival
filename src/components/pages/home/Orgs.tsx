@@ -33,6 +33,7 @@ const ORGS = [
 const AUTO_SCROLL_INTERVAL = 4000; // ms
 
 const Orgs: React.FC = () => {
+  // Restore snapping carousel with slide preview effect
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const autoScrollTimer = useRef<number | null>(null);
@@ -101,12 +102,21 @@ const Orgs: React.FC = () => {
         <div className="mb-6 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center">Organizations</h2>
         </div>
-        <div className="embla overflow-hidden" ref={emblaRef}>
-          <div className="embla__container flex justify-center items-center">
+        <div className="embla" ref={emblaRef}>
+          <div
+            className="embla__container flex"
+            style={{ paddingLeft: "8%", paddingRight: "8%", gap: 0 }}
+          >
             {ORGS.map((org) => (
               <div
-                className="embla__slide flex-[0_0_60%] min-w-0 px-4 flex justify-center"
+                className=""
                 key={org.id}
+                style={{
+                  flex: "0 0 84%",
+                  minWidth: 0,
+                  marginLeft: "2%",
+                  marginRight: "2%",
+                }}
               >
                 <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto">
                   <img
