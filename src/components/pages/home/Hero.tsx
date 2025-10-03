@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="embla__container flex">
           {images.map((src, index) => (
             <div
-              className="embla__slide flex-[0_0_100%] min-w-0 min-h-screen relative"
+              className="embla__slide flex-[0_0_100%] min-w-0 h-screen relative"
               key={index}
             >
               <img
