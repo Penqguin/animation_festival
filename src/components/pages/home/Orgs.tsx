@@ -102,10 +102,15 @@ const Orgs: React.FC = () => {
         <div className="mb-6 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center">Organizations</h2>
         </div>
-        <div className="embla" ref={emblaRef}>
+        <div className="embla overflow-x-hidden" ref={emblaRef}>
           <div
             className="embla__container flex"
-            style={{ paddingLeft: "8%", paddingRight: "8%", gap: 0 }}
+            style={{
+              paddingLeft: "8%",
+              paddingRight: "8%",
+              gap: 0,
+              boxSizing: "border-box",
+            }}
           >
             {ORGS.map((org) => (
               <div
@@ -116,6 +121,8 @@ const Orgs: React.FC = () => {
                   minWidth: 0,
                   marginLeft: "2%",
                   marginRight: "2%",
+                  boxSizing: "border-box",
+                  maxWidth: "100%",
                 }}
               >
                 <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto">
