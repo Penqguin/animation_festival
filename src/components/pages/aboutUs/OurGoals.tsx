@@ -10,7 +10,7 @@ const OurGoals = () => {
           alt="Our Goals"
           className="w-1/2 rounded-lg object-cover"
         />
-        <div className="flex-1 text-black text-left relative">
+        <div className="flex-1 text-white text-left relative">
           <h2 className="relative text-3xl font-bold mb-3">
             <span className="absolute -left-4 -top-2 w-20 h-20 rounded-full bg-blue-100 opacity-40 -z-10"></span>
             Our Goals

@@ -6,8 +6,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(0, 0, 0, 1);
-  background-color: #ffffffff;
+  color: oklch(1 0 360);
+  background-color: oklch(21% 0.034 264.665);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,4 +20,6 @@
   --color-cyber-blue: oklch(0.2136 0.0483 257.95);
   --color-cyber-yellow: oklch(0.7966 0.1444 69.13);
   --color-cyber-purple: oklch(0.4023 0.1412 309.63);
+
+  --color-background-primary: oklch(21% 0.034 264.665);
 }

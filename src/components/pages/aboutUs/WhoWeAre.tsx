@@ -11,7 +11,7 @@ const WhoWeAre = () => {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
-        <div className="flex-1 text-black text-left relative">
+        <div className="flex-1 text-white text-left relative">
           <h2 className="relative text-3xl font-bold mb-3">
             <span className="absolute -left-6 -top-10 w-100 h-100 rounded-full bg-pink-100 opacity-50 -z-10"></span>
             Who We Are
@@ -26,6 +26,6 @@ const WhoWeAre = () => {
       </section>
     </div>
   );
-}
+};
 
 export default WhoWeAre;

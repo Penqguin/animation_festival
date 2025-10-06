@@ -1,3 +1,5 @@
+// put animations for this year plus artist statements beside them
+
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/Navbar";
 
@@ -5,7 +7,7 @@ const Festival = () => {
   return (
     <>
       <Navbar />
-      <section className="py-16 bg-white min-h-screen">
+      <section className="py-16 bg-black min-h-screen">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl font-bold mb-6 text-center">
             Animation Festival

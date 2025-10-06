@@ -5,7 +5,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useNavigate } from "react-router-dom";
 import "/src/utils/Hero.css";
 
-// Placeholder organizations data
 const ORGS = [
   {
     id: 1,
@@ -97,7 +96,16 @@ const Orgs: React.FC = () => {
   );
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section
+      className="py-16 relative"
+      style={{
+        backgroundImage: "url('/orgs/orgs.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
       <div className="max-w-5xl mx-auto px-4">
         <div className="mb-6 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center">Organizations</h2>
@@ -125,7 +133,7 @@ const Orgs: React.FC = () => {
                   maxWidth: "100%",
                 }}
               >
-                <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto">
+                <div className="bg-background-primary rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto">
                   <img
                     src={org.logo}
                     alt={org.name}
@@ -154,8 +162,8 @@ const Orgs: React.FC = () => {
               onClick={() => scrollTo(idx)}
               className={`w-6 h-2 rounded-full transition-all duration-200 ${
                 idx === selectedIndex
-                  ? "bg-black scale-110"
-                  : "bg-gray-300 hover:bg-gray-400"
+                  ? "bg-white scale-110"
+                  : "bg-gray-400 hover:bg-gray-300"
               }`}
               aria-label={`Go to org ${idx + 1}`}
             />
@@ -163,7 +171,7 @@ const Orgs: React.FC = () => {
         </div>
         <div className="flex justify-center mt-8">
           <button
-            className="px-6 py-2 bg-secondary hover:bg-secondary-dark text-black font-semibold rounded-full border transition-all duration-300"
+            className="px-6 py-2 bg-secondary hover:bg-secondary-dark text-white font-semibold rounded-full border transition-all duration-300"
             onClick={() => navigate("/organizations")}
           >
             View All

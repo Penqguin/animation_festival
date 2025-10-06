@@ -40,7 +40,7 @@ const Programs = () => {
 
   return (
     <section className="my-8">
-      <h2 className="text-3xl font-bold mb-6 text-black relative">
+      <h2 className="text-3xl font-bold mb-6 text-white relative">
         <span className="absolute -left-4 -top-2 w-8 h-8 rounded-full bg-purple-100 opacity-40 -z-10"></span>
         Programs
       </h2>
@@ -48,7 +48,7 @@ const Programs = () => {
         {programs.map((program) => (
           <div
             key={program.id}
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center relative"
+            className="bg-black rounded-lg shadow-md p-6 flex flex-col items-center relative"
           >
             <img
               src={program.logo}

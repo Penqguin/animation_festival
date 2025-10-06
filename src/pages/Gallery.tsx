@@ -33,7 +33,7 @@ const Gallery: React.FC = () => {
   return (
     <>
       <Navbar />
-      <section className="py-16 bg-white min-h-screen">
+      <section className="py-16 bg-black min-h-screen">
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-4xl font-bold mb-8 text-center">Gallery</h1>
           <h2 className="text-2xl font-semibold mb-6 text-center">
@@ -59,9 +59,9 @@ const Gallery: React.FC = () => {
         {/* Overlay for selected festival */}
         {selectedFestival && (
           <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-            <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full relative">
+            <div className="bg-black rounded-xl shadow-2xl p-8 max-w-2xl w-full relative">
               <button
-                className="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-black"
+                className="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-white"
                 onClick={() => setSelectedFestival(null)}
                 aria-label="Close"
               >

@@ -5,23 +5,23 @@ const CARDS = [
   {
     id: 1,
     title: "About Us",
-    image: "/assets/templogo.png",
-    description: "Learn more about our mission and team.",
+    image: "/overviewPhotos/shirts.JPG",
+    description: "Learn more about our mission.",
     link: "/aboutus",
   },
   {
     id: 2,
     title: "Festival",
-    image: "/assets/vite.svg",
-    description: "Explore our annual animation festival.",
+    image: "/overviewPhotos/us.jpg",
+    description: "Information about our festivals",
     link: "/festival",
   },
   {
     id: 3,
-    title: "Organizations",
-    image: "/assets/react.svg",
-    description: "Meet our partner organizations.",
-    link: "/organizations",
+    title: "Gallery",
+    image: "/overviewPhotos/gallery.jpg",
+    description: "Photos and films",
+    link: "/gallery",
   },
 ];
 
@@ -45,7 +45,7 @@ const Overview: React.FC<OverviewProps> = ({
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16">
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -66,10 +66,10 @@ const Overview: React.FC<OverviewProps> = ({
                 }`}
               />
               <div className="relative z-10 flex flex-col justify-center items-center h-full p-8">
-                <h3 className="text-2xl font-bold mb-2 text-black drop-shadow-lg">
+                <h3 className="text-2xl font-bold mb-2 text-white drop-shadow-lg">
                   {card.title}
                 </h3>
-                <p className="text-gray-800 text-center mb-4 drop-shadow">
+                <p className="text-gray-300 text-center mb-4 drop-shadow">
                   {card.description}
                 </p>
                 <span className="inline-block mt-auto px-4 py-2 bg-primary text-white rounded-full shadow transition-all duration-200 group-hover:bg-primary-dark">
@@ -78,7 +78,7 @@ const Overview: React.FC<OverviewProps> = ({
               </div>
               {/* Expand effect overlay */}
               {expanded === card.id && (
-                <div className="absolute inset-0 bg-white bg-opacity-60 animate-pulse z-20"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-60 animate-pulse z-20"></div>
               )}
             </div>
           ))}

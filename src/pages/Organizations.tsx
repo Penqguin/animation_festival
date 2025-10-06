@@ -40,7 +40,7 @@ const Organizations = () => {
             {ORGS.map((org) => (
               <div
                 key={org.id}
-                className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto"
+                className="bg-black rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto"
               >
                 <img
                   src={org.logo}

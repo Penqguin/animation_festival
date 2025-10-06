@@ -8,9 +8,9 @@ const Hero = () => {
 
   // Images array - replace with actual image paths once I've got images
   const images = [
-    "/assets/react.svg",
-    "/assets/react.svg",
-    "/assets/react.svg",
+    "/heroPhotos/1.jpeg",
+    "/heroPhotos/2.jpg",
+    "/heroPhotos/3.jpg",
   ];
 
   const onSelect = useCallback(() => {
@@ -59,7 +59,7 @@ const Hero = () => {
             onClick={() => scrollTo(index)}
             className={`w-10 h-3 transition-all ${
               index === selectedIndex
-                ? "bg-black scale-125"
+                ? "bg-white scale-125"
                 : "bg-gray-400 hover:bg-gray-300"
             }`}
             aria-label={`Go to slide ${index + 1}`}
