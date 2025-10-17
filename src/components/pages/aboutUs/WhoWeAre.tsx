@@ -6,7 +6,7 @@ const WhoWeAre = () => {
         {/* Decorative circle */}
         <span className="absolute left-0 top-0 w-20 h-20 rounded-full bg-purple-100 opacity-40 -z-10"></span>
         <iframe
-          className="w-full md:w-1/2 h-50"
+          className="w-full md:w-1/2 h-60"
           src="https://www.youtube.com/embed/RzuO3gVHGIQ?si=t-r5ogh-Fl7eppAN"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

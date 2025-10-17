@@ -2,7 +2,7 @@ import "/src/utils/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-black/40 text-white py-10 mt-16 w-full">
+    <footer className="bg-black/40 text-white py-10 w-full">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Logo and tagline */}
         <div className="flex flex-col items-center md:items-start">

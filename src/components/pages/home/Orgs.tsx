@@ -1,6 +1,12 @@
 // using embla carousel
 
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useCallback,
+  useState,
+  useMemo,
+} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useNavigate } from "react-router-dom";
 import "/src/utils/Hero.css";
@@ -38,6 +44,19 @@ const Orgs: React.FC = () => {
   const autoScrollTimer = useRef<number | null>(null);
   const userInteracted = useRef(false);
   const navigate = useNavigate();
+
+  // memoize commonly used inline style to avoid reallocation each render
+  const slideStyle = useMemo<React.CSSProperties>(
+    () => ({
+      flex: "0 0 84%",
+      minWidth: 0,
+      marginLeft: "2%",
+      marginRight: "2%",
+      boxSizing: "border-box",
+      maxWidth: "100%",
+    }),
+    []
+  );
 
   // Auto-scroll logic
   const scrollNext = useCallback(() => {
@@ -77,13 +96,25 @@ const Orgs: React.FC = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
       resetAutoScroll();
     };
+
+    // Throttle resetAutoScroll when handling scroll to avoid expensive per-frame work
+    let lastScroll = 0;
+    const onScrollThrottled = () => {
+      const now = Date.now();
+      if (now - lastScroll > 150) {
+        lastScroll = now;
+        resetAutoScroll();
+      }
+    };
+
     emblaApi.on("select", onSelect);
     emblaApi.on("pointerDown", resetAutoScroll);
-    emblaApi.on("scroll", resetAutoScroll);
+    // Use throttled scroll handler rather than raw scroll
+    emblaApi.on("scroll", onScrollThrottled);
     return () => {
       emblaApi.off("select", onSelect);
       emblaApi.off("pointerDown", resetAutoScroll);
-      emblaApi.off("scroll", resetAutoScroll);
+      emblaApi.off("scroll", onScrollThrottled);
     };
   }, [emblaApi, resetAutoScroll]);
 
@@ -120,38 +151,35 @@ const Orgs: React.FC = () => {
               boxSizing: "border-box",
             }}
           >
-            {ORGS.map((org) => (
-              <div
-                className=""
-                key={org.id}
-                style={{
-                  flex: "0 0 84%",
-                  minWidth: 0,
-                  marginLeft: "2%",
-                  marginRight: "2%",
-                  boxSizing: "border-box",
-                  maxWidth: "100%",
-                }}
-              >
-                <div className="bg-background-primary rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto">
-                  <img
-                    src={org.logo}
-                    alt={org.name}
-                    className="w-24 h-24 object-contain mb-4"
-                  />
-                  <h3 className="text-xl font-semibold mb-2">{org.name}</h3>
-                  <p className="text-gray-600 mb-4 text-center">
-                    {org.description}
-                  </p>
-                  <button
-                    className="mt-auto px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition"
-                    onClick={() => navigate(org.link)}
-                  >
-                    Visit Page
-                  </button>
-                </div>
-              </div>
-            ))}
+            {useMemo(
+              () =>
+                ORGS.map((org) => (
+                  <div className="org-slide" key={org.id} style={slideStyle}>
+                    <div className="bg-background-primary rounded-xl shadow-lg p-8 flex flex-col items-center h-full max-w-md w-full mx-auto org-card-inner">
+                      <img
+                        src={org.logo}
+                        alt={org.name}
+                        width={96}
+                        height={96}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-24 h-24 object-contain mb-4 org-img"
+                      />
+                      <h3 className="text-xl font-semibold mb-2">{org.name}</h3>
+                      <p className="text-gray-600 mb-4 text-center">
+                        {org.description}
+                      </p>
+                      <button
+                        className="mt-auto px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition"
+                        onClick={() => navigate(org.link)}
+                      >
+                        Visit Page
+                      </button>
+                    </div>
+                  </div>
+                )),
+              [navigate, slideStyle]
+            )}
           </div>
         </div>
         {/* Dots navigation */}
@@ -177,9 +205,18 @@ const Orgs: React.FC = () => {
             View All
           </button>
         </div>
+        <StyleTweaks />
       </div>
     </section>
   );
 };
 
 export default Orgs;
+
+// Tiny stylesheet additions to help with compositing and will-change hints
+const StyleTweaks = () => (
+  <style>{`
+    .org-card-inner, .org-img { will-change: transform, opacity; }
+    .org-slide { box-sizing: border-box; }
+  `}</style>
+);

@@ -6,7 +6,7 @@ const Impact = () => {
         {/* Decorative circle */}
         <span className="absolute left-10 bottom-0 w-14 h-14 rounded-full bg-green-100 opacity-40 -z-10"></span>
         <img
-          src={"/assets/react.svg"}
+          src={"/assets/theatre.jpg"}
           alt="Impact"
           className="w-1/2 rounded-lg object-cover"
         />

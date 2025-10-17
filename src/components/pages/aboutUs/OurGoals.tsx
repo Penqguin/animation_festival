@@ -6,7 +6,7 @@ const OurGoals = () => {
         {/* Decorative circle */}
         <span className="absolute right-0 top-4 w-16 h-16 rounded-full bg-yellow-200 opacity-40 -z-10"></span>
         <img
-          src={"/assets/react.svg"}
+          src={"/assets/teachers.JPG"}
           alt="Our Goals"
           className="w-1/2 rounded-lg object-cover"
         />
