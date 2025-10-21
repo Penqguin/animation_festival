@@ -6,11 +6,28 @@ const Hero = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Images array - replace with actual image paths once I've got images
-  const images = [
-    "/heroPhotos/1.jpeg",
-    "/heroPhotos/2.jpg",
-    "/heroPhotos/3.jpg",
+  const slides = [
+    {
+      id: 1,
+      image: "/heroPhotos/1.jpeg",
+      title: "Gallery",
+      description: "View our gallery.",
+      link: "/gallery",
+    },
+    {
+      id: 2,
+      image: "/heroPhotos/2.jpg",
+      title: "Organizations",
+      description: "Look at the organizations who support us.",
+      link: "/organizations",
+    },
+    {
+      id: 3,
+      image: "/heroPhotos/3.jpg",
+      title: "About Us",
+      description: "Learn more about our mission.",
+      link: "/aboutus",
+    },
   ];
 
   const onSelect = useCallback(() => {
@@ -36,16 +53,23 @@ const Hero = () => {
     <div className="relative">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
-          {images.map((src, index) => (
+          {slides.map((slide, index) => (
             <div
-              className="embla__slide flex-[0_0_100%] min-w-0 h-screen relative"
+              className="embla__slide flex-[0_0_80%] h-200 relative"
               key={index}
             >
               <img
-                src={src}
-                alt={`Slide ${index + 1}`}
+                src={slide.image}
+                alt={`Slide ${slide.id}`}
                 className="w-full h-full object-cover"
               />
+              <div className="absolute bottom-10 left-10 p-4 transform">
+                <h2 className="mb-2 text-xl">{slide.title}</h2>
+                <p className="mb-2 text-4xl">{slide.description}</p>
+                <a href={slide.link} className="">
+                  Learn More
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -53,7 +77,7 @@ const Hero = () => {
 
       {/* Dots navigation */}
       <div className="flex justify-center gap-3 mt-4">
-        {images.map((_, index) => (
+        {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}

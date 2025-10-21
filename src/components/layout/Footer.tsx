@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Navigation links */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
           <a href="/aboutus" className="hover:underline">
-            About
+            About Us
           </a>
           <a href="/festival" className="hover:underline">
             Festival
