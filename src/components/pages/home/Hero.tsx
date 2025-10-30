@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import "/src/utils/Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -66,9 +67,9 @@ const Hero = () => {
               <div className="absolute bottom-10 left-10 p-4 transform">
                 <h2 className="mb-2 text-xl">{slide.title}</h2>
                 <p className="mb-2 text-4xl">{slide.description}</p>
-                <a href={slide.link} className="">
+                <Link to={slide.link} className="hover:text-gray-300 transition duration-300">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           ))}

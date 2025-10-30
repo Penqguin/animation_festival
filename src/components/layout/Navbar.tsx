@@ -32,7 +32,7 @@ const Navbar = () => {
               { to: "/aboutus", label: "About Us" },
               { to: "/festival", label: "Festival" },
               { to: "/gallery", label: "Gallery" },
-              { to: "/organizations", label: "Orgs" },
+              { to: "/supporters", label: "Supporters" },
             ].map(({ to, label }) => (
               <Link
                 key={to}
@@ -81,38 +81,38 @@ const Navbar = () => {
               <div className="flex flex-col text-center space-y-4">
                 <Link
                   to="/"
-                  className="text-white hover:text-primary font-semibold transition"
+                  className="text-white hover:text-primary font-semibold transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   to="/aboutus"
-                  className="text-white hover:text-primary font-semibold transition"
+                  className="text-white hover:text-primary font-semibold transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   to="/festival"
-                  className="text-white hover:text-primary font-semibold transition"
+                  className="text-white hover:text-primary font-semibold transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Festival
                 </Link>
                 <Link
                   to="/gallery"
-                  className="text-white hover:text-primary font-semibold transition"
+                  className="text-white hover:text-primary font-semibold transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Gallery
                 </Link>
                 <Link
                   to="/organizations"
-                  className="text-white hover:text-primary font-semibold transition"
+                  className="text-white hover:text-primary font-semibold transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Orgs
+                  Supporters
                 </Link>
               </div>
             </motion.div>

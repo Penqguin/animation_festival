@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type Program = {
   id: number;
   name: string;
-  logo: string; // URL to logo image
+  logo: string;
   link: string;
   description: string;
 };
@@ -55,14 +56,14 @@ const Programs = () => {
               alt={`${program.name} logo`}
               className="w-16 h-16 mb-4 object-contain"
             />
-            <a
-              href={program.link}
+            <Link
+              to={program.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl font-semibold text-blue-700 hover:underline mb-2"
             >
               {program.name}
-            </a>
+            </Link>
             <p className="text-gray-700 text-center">{program.description}</p>
           </div>
         ))}
