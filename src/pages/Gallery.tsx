@@ -3,10 +3,11 @@ import Footer from "../components/layout/Footer";
 
 const Gallery = () => {
   return (
-    <>
+    <div>
       <Navbar />
+
       <Footer />
-    </>
+    </div>
   );
 };
 
