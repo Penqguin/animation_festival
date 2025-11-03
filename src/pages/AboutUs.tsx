@@ -18,7 +18,6 @@ import Footer from "../components/layout/Footer";
 import WhoWeAre from "../components/pages/aboutUs/WhoWeAre";
 import OurGoals from "../components/pages/aboutUs/OurGoals";
 import Impact from "../components/pages/aboutUs/Impact";
-import Programs from "../components/pages/aboutUs/Programs";
 
 const AboutUs = () => {
   return (
@@ -43,11 +42,10 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-16 max-w-4xl mx-auto px-4">
+      <div className="flex flex-col gap-16 max-w-4xl mx-auto mb-4 px-4">
         <WhoWeAre />
         <OurGoals />
         <Impact />
-        <Programs />
       </div>
       <Footer />
     </>

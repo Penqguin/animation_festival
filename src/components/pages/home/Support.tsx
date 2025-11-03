@@ -11,6 +11,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useNavigate } from "react-router-dom";
 import "/src/utils/Hero.css";
 
+// cards for the supporters
+// TODO: add all organizations
 const ORGS = [
   {
     id: 1,
@@ -35,8 +37,11 @@ const ORGS = [
   },
 ];
 
-const AUTO_SCROLL_INTERVAL = 4000; // ms
+const AUTO_SCROLL_INTERVAL = 1000; // ms
 
+// TODO: change to banner like toonboom where it shows the organizations 
+//       logos infinitely scrolling horizontally like a banner
+// maybe add velocity scroll as shown in motion docs
 const Orgs: React.FC = () => {
   // Restore snapping carousel with slide preview effect
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -138,9 +143,6 @@ const Orgs: React.FC = () => {
     >
       <div className="absolute inset-0 bg-black/30 pointer-events-none" />
       <div className="max-w-5xl mx-auto px-4">
-        <div className="mb-6 flex flex-col items-center">
-          <h2 className="text-3xl font-bold text-center">Organizations</h2>
-        </div>
         <div className="embla overflow-x-hidden" ref={emblaRef}>
           <div
             className="embla__container flex"

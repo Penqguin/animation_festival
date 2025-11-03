@@ -29,6 +29,17 @@ type OverviewProps = {
   cardSize?: { minHeight?: number; width?: number | string };
 };
 
+/**
+ * Overview component to display a grid of cards with images and descriptions.
+ * Each card is clickable and will navigate to the corresponding link.
+ * The component also has an expand effect when a card is clicked.
+ * The expand effect is a pulse animation that increases the size of the card.
+ * The card will also have a overlay with a "Learn More" button.
+ *
+ * @param {OverviewProps} props - The props object
+ * @param {object} [props.cardSize] - The size of the cards. Defaults to {minHeight: 260, width: "100%"}
+ * @returns {React.ReactElement} - The Overview component
+ */
 const Overview: React.FC<OverviewProps> = ({
   cardSize = { minHeight: 260, width: "100%" },
 }) => {
@@ -40,7 +51,7 @@ const Overview: React.FC<OverviewProps> = ({
       setExpanded(null);
     } else {
       setExpanded(id);
-      setTimeout(() => navigate(link), 350); // Simulate expand then navigate
+      navigate(link);
     }
   };
 
@@ -78,7 +89,7 @@ const Overview: React.FC<OverviewProps> = ({
               </div>
               {/* Expand effect overlay */}
               {expanded === card.id && (
-                <div className="absolute inset-0 bg-black bg-opacity-60 animate-pulse z-20"></div>
+                <div className="absolute inset-0 bg-opacity-60 animate-pulse z-20"></div>
               )}
             </div>
           ))}

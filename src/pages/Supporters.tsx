@@ -73,7 +73,7 @@ const Organizations = () => {
       link: "https://www.wacom.com",
     },
     {
-      image: "/orgs/SHSM.svg",
+      image: "/orgs/SHSM.png",
       title: "SHSM",
       link: "https://www.ontario.ca/page/specialist-high-skills-major",
     },
@@ -99,7 +99,7 @@ const Organizations = () => {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen bg-gray-800">
+      <div className="min-h-screen">
         {/* Banner Section */}
         <div className="w-full py-12 mb-10 flex flex-col items-center relative">
           <h1 className="relative text-5xl font-extrabold text-white mb-4">
