@@ -34,12 +34,8 @@ const AboutUs = () => {
           <span className="absolute -left-8 -top-4 w-16 h-16 rounded-full bg-blue-100 opacity-40 -z-10"></span>
           About Us
         </h1>
-        <p className="relative text-xl text-white max-w-2xl text-center">
-          {/* Small circle behind text */}
-          <span className="absolute left-1/2 -translate-x-1/2 -top-3 w-8 h-8 rounded-full bg-green-100 opacity-40 -z-10"></span>
-          Inspiring creativity and innovation through animation education and
-          community.
-        </p>
+        {/* Small circle behind text */}
+        <span className="absolute left-1/2 -translate-x-1/2 -top-3 w-8 h-8 rounded-full bg-green-100 opacity-40 -z-10"></span>
       </div>
 
       <div className="flex flex-col gap-16 max-w-4xl mx-auto mb-4 px-4">

@@ -6,7 +6,7 @@ const CARDS = [
     id: 1,
     title: "About Us",
     image: "/overviewPhotos/shirts.JPG",
-    description: "Learn more about our mission.",
+    description: "Who we are",
     link: "/aboutus",
   },
   {

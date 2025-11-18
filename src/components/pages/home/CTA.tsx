@@ -9,7 +9,7 @@ const CTA = () => {
           Want to see something cool?
         </h2>
         <p className="text-xl text-gray-400 max-w-2xl">
-          Check out our festivals. Discover incredible talent, connect with
+          Check out our festivals. Connect with
           fellow artists, and be part of something extraordinary.
         </p>
         <Link

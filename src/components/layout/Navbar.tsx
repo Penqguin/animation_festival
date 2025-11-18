@@ -8,11 +8,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-black/70 border-b border-gray-700/60 shadow-sm">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4, ease: "easeInOut", type: "spring" }}
-      >
+      <div>
         <nav className="flex mx-auto justify-between items-center px-4 max-w-6xl py-2">
           {/* Logo */}
           <Link
@@ -118,7 +114,7 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </header>
   );
 };

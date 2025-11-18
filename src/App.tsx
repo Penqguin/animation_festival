@@ -16,6 +16,10 @@ const App: React.FC = () => {
         <Route path="/" element={<Index />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/Festival" element={<Festival />} />
+        {/* Gallery routes: /gallery and per-gallery */}
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/:slug" element={<Gallery />} />
+        {/* legacy/uppercase paths preserved */}
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/supporters" element={<Supporters />} />
         {/* add custom routes above this */}
