@@ -67,37 +67,39 @@ const OrgPanel = ({ image, title }: { image: string; title: string }) => (
 
 const Support = () => {
   return (
-    <div className="py-8 lg:mx-40">
-      <img
-        src="/animations/Marquee.gif"
-        className="sm:w-1/2 md:1/3 xl:w-1/4 absolute left-auto bottom-10 sm:bottom-0 z-50"
-      ></img>
-      <Link to="/supporters">
-        <Marquee
-          className="pb-4"
-          autoFill={true}
-          speed={100}
-          gradient={true}
-          gradientColor="oklch(21% 0.034 264.665)"
-          gradientWidth={200}
-        >
-          {orgs.map((org) => (
-            <OrgPanel key={org.title} image={org.image} title={org.title} />
-          ))}
-        </Marquee>
-        <Marquee
-          autoFill={true}
-          direction="right"
-          speed={100}
-          gradient={true}
-          gradientColor="oklch(21% 0.034 264.665)"
-          gradientWidth={200}
-        >
-          {orgs.map((org) => (
-            <OrgPanel key={org.title} image={org.image} title={org.title} />
-          ))}
-        </Marquee>
-      </Link>
+    <div className="relative">
+      <div className="h-full py-8 lg:mx-40">
+        <img
+          src="/animations/Marquee.gif"
+          className="sm:w-1/2 md:1/3 xl:w-1/4 absolute left-auto bottom-auto z-5"
+        ></img>
+        <Link to="/supporters">
+          <Marquee
+            className="pb-4"
+            autoFill={true}
+            speed={100}
+            gradient={true}
+            gradientColor="oklch(21% 0.034 264.665)"
+            gradientWidth={200}
+          >
+            {orgs.map((org) => (
+              <OrgPanel key={org.title} image={org.image} title={org.title} />
+            ))}
+          </Marquee>
+          <Marquee
+            autoFill={true}
+            direction="right"
+            speed={100}
+            gradient={true}
+            gradientColor="oklch(21% 0.034 264.665)"
+            gradientWidth={200}
+          >
+            {orgs.map((org) => (
+              <OrgPanel key={org.title} image={org.image} title={org.title} />
+            ))}
+          </Marquee>
+        </Link>
+      </div>
     </div>
   );
 };

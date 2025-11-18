@@ -51,7 +51,7 @@ const Hero = () => {
   );
 
   return (
-    <div className="relative">
+    <div>
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {slides.map((slide, index) => (
