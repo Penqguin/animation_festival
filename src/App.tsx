@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
-import Festival from "./pages/Festival";
 import Gallery from "./pages/Gallery";
 import Supporters from "./pages/Supporters";
 import NotFound from "./pages/NotFound";
@@ -15,7 +14,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/Festival" element={<Festival />} />
         {/* Gallery routes: /gallery and per-gallery */}
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/gallery/:slug" element={<Gallery />} />

@@ -26,7 +26,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-2">
             {[
               { to: "/aboutus", label: "About Us" },
-              { to: "/festival", label: "Festival" },
               { to: "/gallery", label: "Gallery" },
               { to: "/supporters", label: "Supporters" },
             ].map(({ to, label }) => (
@@ -88,13 +87,6 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About Us
-                </Link>
-                <Link
-                  to="/festival"
-                  className="text-white hover:text-primary font-semibold transition duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Festival
                 </Link>
                 <Link
                   to="/gallery"
