@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CTA = () => {
   return (
     <section className="relative bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-      <img src="animations/Ball.gif" className="w-full h-fit"></img>
+      <img src="animations/Ball1.gif" className="w-full h-fit"></img>
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <div className="mx-auto flex flex-col justify-center items-center px-4 py-2 max-w-6xl text-center space-y-6">
           <h2 className="text-4xl font-display font-bold">
