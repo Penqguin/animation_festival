@@ -18,9 +18,9 @@ const Hero = () => {
     {
       id: 2,
       image: "/heroPhotos/2.jpg",
-      title: "Organizations",
-      description: "Look at the organizations who support us.",
-      link: "/organizations",
+      title: "Supporters",
+      description: "Check out the organizations who support us.",
+      link: "/supporters",
     },
     {
       id: 3,
@@ -56,7 +56,7 @@ const Hero = () => {
         <div className="embla__container flex">
           {slides.map((slide, index) => (
             <div
-              className="embla__slide flex-[0_0_80%] h-200 relative"
+              className="embla__slide flex-[0_0_80%] h-screen sm:h-200 relative"
               key={index}
             >
               <img
